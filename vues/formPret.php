@@ -36,7 +36,7 @@ $_SESSION['dateR'] = $dateR;
             <h1 style="text-align: center;">Emprunt</h1>
         </div>
     </div>
-    <form action="vues/materiel.php" method="POST">
+    <form action="index.php?uc=materiel" method="POST">
         <div class="row">
             <div class="col">
                 <h3 style="text-align: left;margin-top: 3%;"> Nom emprunteur</h3>
@@ -53,24 +53,41 @@ $_SESSION['dateR'] = $dateR;
             <div class="col">
                 <h3 style="margin-top: 3%;">Date</h3>
             </div>
-            <div class="col" style="width: 100%;margin-top: 2%;"><input type="date" name="dateD" style="text-align: right;" value="<?php echo $dateDClean; ?>"></div>
+            <div class="col" style="width: 100%;margin-top: 2%;"><input id="startDate" type="date" name="dateD" style="text-align: right;" value="<?php echo date('Y-m-d'); ?>" min="<?php echo date('Y-m-d'); ?>"></div>
         </div>
         <div class="row">
             <div class="col">
                 <h3 style="margin-top: 3%;">Date retour prévu</h3>
             </div>
-            <div class="col" style="width: 100%;margin-top: 2%;"><input type="date" name="dateR" style="text-align: right;" value="<?php echo $dateRClean; ?>"></div>
+            <div class="col" style="width: 100%;margin-top: 2%;"><input id="endDate" type="date" name="dateR" style="text-align: right;" value="<?php echo $dateRClean; ?>" min="<?php echo date('Y-m-d'); ?>"></div>
         </div>
         <div class="row">
             <div class="col">
                 <h3 style="margin-top: 3%;">Matériel</h3>
             </div>
-            <div class="col" style="text-align: left;margin-top: 2%;"><input class="btn btn-primary" type="submit" value="+"></div>
+            <div class="col">
+                <button class="btn btn-info mt-1" type="button" onclick="loadDoc()">+</button>
+                <div class="mt-1" id="demo" style="max-height: 200px; width:100% ; overflow: auto;">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row-md-12 text-center">
+            <input type="submit" class="btn btn-primary lm-6">
         </div>
     </form>
 </div>
-<?php
-
-
-
-?>
+<script>
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("demo").innerHTML =
+                    this.responseText;
+            }
+        };
+        xhttp.open("GET", "modeles/materielAjax.txt", true);
+        xhttp.send();
+    }
+</script>
