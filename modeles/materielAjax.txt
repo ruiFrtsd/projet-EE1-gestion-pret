@@ -1,7 +1,7 @@
 <table class="table" border="1px, black">
      <thead class="thead-dark">
          <tr>
-             <th>N° ICT</th>
+             <th>N° CTI</th>
              <th>Nom</th>
              <th>Catégorie</th>
              <th>Description</th>
@@ -10,58 +10,58 @@
      </thead>
      <tbody>
         <tr>
-            <td>oui</td>
+            <td>baguette</td>
             <td></td>
             <td></td>
-            <td colspan="2"></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td colspan="2"></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td colspan="2"></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td colspan="2"></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td colspan="2"></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td colspan="2"></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td colspan="2"></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td colspan="2"></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td colspan="2"></td>
+            <td></td>
         </tr>
                       
      </tbody>

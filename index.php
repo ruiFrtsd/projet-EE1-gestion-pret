@@ -12,6 +12,9 @@ switch($uc){
     case 'listMateriel' :
       include('vues/listMateriel.php');
     break;
+    case 'login' :
+      include('vues/login.php');
+    break;
   }  
 include("vues/footer.php");
 ?>

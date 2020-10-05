@@ -66,9 +66,9 @@ $_SESSION['dateR'] = $dateR;
                 <h3 style="margin-top: 3%;">Matériel</h3>
             </div>
             <div class="col">
-                <button class="btn btn-info mt-1" type="button" onclick="loadDoc()">+</button>
-                <div class="mt-1" id="demo" style="max-height: 200px; width:100% ; overflow: auto;">
-                    
+                <button class="btn btn-info mt-1" type="button" onclick="loadMatList()">+</button>
+                <div class="mt-1" id="idMatList" style="max-height: 200px; width:100% ; overflow: auto;">
+
                 </div>
             </div>
         </div>
@@ -79,15 +79,37 @@ $_SESSION['dateR'] = $dateR;
     </form>
 </div>
 <script>
-    function loadDoc() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("demo").innerHTML =
-                    this.responseText;
-            }
-        };
-        xhttp.open("GET", "modeles/materielAjax.txt", true);
-        xhttp.send();
+    var ouvrirFermer = 0;
+
+    function loadMatList() {
+        ouvrirFermer++;
+        if (ouvrirFermer == 1) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("idMatList").innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.open("GET", "modeles/materielAjax.txt", true);
+            xhttp.send();
+        }
+        else if(ouvrirFermer == 0){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("idMatList").innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.closedir("GET", "modeles/materielAjax.txt", true);
+            xhttp.send();
+        }
+        else{
+            ouvrirFermer == 0
+        }
+
+
+
     }
 </script>

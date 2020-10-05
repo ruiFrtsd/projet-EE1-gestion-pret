@@ -1,9 +1,5 @@
 <?php 
 include('header.php');
-
-
-
-
 ?>
 
 <form>
@@ -24,4 +20,4 @@ include('header.php');
 </form>
 <?php 
 include('footer.php');
-?>4
+?>
