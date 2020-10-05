@@ -9,7 +9,7 @@
         if ($pseudo != ""  && $password != "") {
             $passHash = Crypter($password);
             // On check si l'utilisateur existe
-            $reponse = $bdd->query('SELECT idUtilisateur, pseudo, mdp FROM users');
+            $reponse = $bdd->query('SELECT idUtilisateur, user, password FROM t_users');
             while ($donnees = $reponse->fetch()) {
                 if ($donnees['user'] == $pseudo && $donnees['password'] == MD5($password)) {
                     $_SESSION['connected'] = true;

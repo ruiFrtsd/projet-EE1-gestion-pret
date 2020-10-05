@@ -25,6 +25,8 @@ class Login {
     return $this;
     }
 
+
+    
     public static function findUsersAndPasswords()
     {
         $texteReq="SELECT * FROM user";

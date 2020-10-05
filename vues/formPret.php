@@ -102,7 +102,7 @@ $_SESSION['dateR'] = $dateR;
                         this.responseText;
                 }
             };
-            xhttp.closedir("GET", "modeles/materielAjax.txt", true);
+            xhttp.open("GET", "modeles/materielAjax.txt", true);
             xhttp.send();
         }
         else{

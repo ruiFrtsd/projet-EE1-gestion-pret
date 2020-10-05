@@ -5,7 +5,7 @@
              <th>Nom</th>
              <th>Catégorie</th>
              <th>Description</th>
-             <th><input type="text" placeholder="Recherche par ICT"></th>
+             <th><input type="text" placeholder="Recherche par CTI"></th>
          </tr>
      </thead>
      <tbody>
