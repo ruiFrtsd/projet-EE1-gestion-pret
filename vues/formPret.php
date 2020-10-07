@@ -68,11 +68,37 @@ $_SESSION['dateR'] = $dateR;
             <div class="col">
                 <button class="btn btn-info mt-1" type="button" onclick="loadMatList()">+</button>
                 <div class="mt-1" id="idMatList" style="max-height: 200px; width:100% ; overflow: auto;">
+                    <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        
+                        try {
+                          $bdd = new PDO("mysql:host=$servername;dbname=dbprets", $username, $password);
+                          // set the PDO error mode to exception
+                          $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                          echo "Connected successfully";
+                        } catch(PDOException $e) {
+                          echo "Connection failed: " . $e->getMessage();
+                        }
 
+                        $sql = $bdd->prepare("Select * from t_materiel");
+                        //foreach(){
+                        //    
+                        //}
+
+
+            //<tr>
+            //<td></td>
+            //<td></td>
+            //<td></td>
+            //<td></td>
+            //<td></td>
+            //</tr>
+                    ?>
                 </div>
             </div>
         </div>
-
         <div class="row-md-12 text-center">
             <input type="submit" class="btn btn-primary lm-6">
         </div>
